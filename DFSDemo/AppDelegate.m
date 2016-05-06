@@ -66,7 +66,7 @@
                 
                 //是否为文件夹
                 if ([isDirectory boolValue]) {
-                    NSDirectoryEnumerator *dirEnumerator = [self enumeratorPathByFileManager:fileManager atURL:url propertiesForKeys:keys options:NSDirectoryEnumerationSkipsSubdirectoryDescendants];
+                    NSDirectoryEnumerator *dirEnumerator = [self enumeratorPathByFileManager:fileManager atURL:url propertiesForKeys:@[NSURLIsDirectoryKey] options:NSDirectoryEnumerationSkipsSubdirectoryDescendants];
                     if (dirEnumerator.allObjects.count > 0) {
                         NSLog(@"文件夹内有文件,忽略此条路径 %@",[url path]);
                     } else {
